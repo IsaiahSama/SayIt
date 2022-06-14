@@ -130,11 +130,12 @@ class Main:
         # Parsing time.
         if self.cmd == "wait":
             text = msg.split("wait")[1:]
-            val = text[-1]
+            val = text[-1].strip()
             if not val.isnumeric():
                 print(val, "is not a number, so no waiting will be done.")
                 return False
             secs = float(val)
+            print("Waiting", secs, "seconds")
             time.sleep(secs)
 
 
